@@ -7,6 +7,7 @@ import Container from "./Container";
 class App extends Component{
   state = {
     contacts: [],
+     filter: '',
    
   }
 
