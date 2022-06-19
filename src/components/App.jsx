@@ -70,12 +70,17 @@ class App extends Component{
         
         <h2>PhoneBook</h2>
 
-        <ContactForm onSubmit={ this.addContact } />
+        <ContactForm
+          onSubmit={this.addContact}
+        />
       
         <h2>Contacts</h2>
         <br></br>
 
-        <Filter value={filter} onChange={this.changeFilter} />
+        <Filter
+          value={filter}
+          onChange={this.changeFilter}
+        />
 
         <ContactList
           contacts={visibleContacts}
