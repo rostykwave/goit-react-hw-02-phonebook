@@ -7,29 +7,29 @@
   border: 1px solid black;
 }
 
-.form-field {
+.formField {
   position: relative;
 }
-.form-field:not(:last-child) {
+.formField:not(:last-child) {
   margin-bottom: 28px;
 }
 
-.form-label {
+.formLabel {
   position: absolute;
   top: 0;
   left: 0;
   transform: translateY(calc(-100% + -4px));
 }
 
-.form-input {
+.formInput {
   border: 1px solid rgba(33, 33, 33, 0.2);
 }
 
-.form-input:focus-visible {
+.formInput:focus-visible {
   outline: 1px solid #2196f3;
 }
 
-.submit-btn {
+.submitBtn {
   border: none;
   font: inherit;
   cursor: pointer;
@@ -46,6 +46,6 @@
   border-radius: 4px;
 }
 
-.submit-btn:hover {
+.submitBtn:hover {
   background-color: #c8e4fc;
 }

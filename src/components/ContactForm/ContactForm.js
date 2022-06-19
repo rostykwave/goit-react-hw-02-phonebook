@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import './Form.css';
+import s from './ContactForm.module.css';
 
-class Form extends Component {
+class ContactForm extends Component {
   state = {
     name: '',
     number: '',
@@ -48,35 +48,35 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="form">
-        <label className="form-field">
-          <span className="form-label">Name</span>
+      <form onSubmit={this.handleSubmit} className={s.form}>
+        <label className={s.formField}>
+          <span className={s.formLabel}>Name</span>
           <input
             type="text"
             value={this.state.name}
             onChange={this.handleChange}
             name="name"
-            className="form-input"
+            className={s.formInput}
             pattern="^[a-zA-Zа-яієїґА-ЯҐЄІЇ]+(([' -][a-zA-Zа-яієїґА-ЯҐЄІЇ ])?[a-zA-Zа-яієїґА-ЯҐЄІЇ]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
         </label>
 
-        <label className="form-field">
-          <span className="form-label">Number</span>
+        <label className={s.formField}>
+          <span className={s.formLabel}>Number</span>
           <input
             type="tel"
             value={this.state.number}
             onChange={this.handleChange}
             name="number"
-            className="form-input"
+            className={s.formInput}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
         </label>
-        <button type="submit" className="submit-btn">
+        <button type="submit" className={s.submitBtn}>
           Add contact
         </button>
       </form>
@@ -84,4 +84,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default ContactForm;

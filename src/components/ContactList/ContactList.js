@@ -1,7 +1,5 @@
-import './ContactList.css';
-
 const ContactList = ({ contacts }) => (
-  <ul className="ContactList">
+  <ul>
     {contacts.map(({ id, name, number }) => (
       <li key={id}>
         {name}: {number}

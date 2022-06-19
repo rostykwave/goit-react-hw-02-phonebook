@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Form from "./Form/Form";
+import ContactForm from "./ContactForm";
 import { nanoid } from 'nanoid';
 import ContactList from "./ContactList";
 import Container from "./Container";
@@ -20,6 +20,14 @@ class App extends Component{
   }
 
   addContact = data => {
+   
+    const { contacts } = this.state;
+    if (contacts.find(contact => contact.name === data.name)) {
+      alert(`${data.name} is already in contacts`)
+      return;
+    }
+    
+
     const contact = {
       id: nanoid(),
       ...data,
@@ -53,17 +61,17 @@ class App extends Component{
 
     return (
       <Container>
+        
         <h2>PhoneBook</h2>
 
-
-        <Form onSubmit={ this.addContact } />
+        <ContactForm onSubmit={ this.addContact } />
       
         <h2>Contacts</h2>
+        <br></br>
 
         <Filter value={filter} onChange={this.changeFilter} />
 
         <ContactList contacts={visibleContacts} />
-        {/* <ContactList contacts={contacts} /> */}
       
       </Container>
     )
