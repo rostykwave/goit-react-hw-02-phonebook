@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './Form.css';
 
 class Form extends Component {
   state = {
@@ -47,14 +48,15 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
+      <form onSubmit={this.handleSubmit} className="form">
+        <label className="form-field">
+          <span className="form-label">Name</span>
           <input
             type="text"
             value={this.state.name}
             onChange={this.handleChange}
             name="name"
+            className="form-input"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
@@ -73,7 +75,9 @@ class Form extends Component {
   required
 />
           </label> */}
-        <button type="submit">Add contact</button>
+        <button type="submit" className="submit-btn">
+          Add contact
+        </button>
       </form>
     );
   }
