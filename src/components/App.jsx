@@ -7,6 +7,9 @@ class App extends Component{
    
   }
 
+  formSubmitHandler = data => {
+    console.log(data);
+  }
  
 
   render() {
@@ -14,7 +17,8 @@ class App extends Component{
       <>
         <h2>PhoneBook</h2>
 
-<Form/>
+
+        <Form onSubmit={ this.formSubmitHandler } />
       
         <h2>Contacts</h2>
         <ul></ul>
