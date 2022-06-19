@@ -1,5 +1,7 @@
 .form {
-  display: block;
+  /* display: block; */
+  display: flex;
+  flex-direction: column;
   width: 300px;
   padding: 30px 15px;
   border: 1px solid black;
@@ -8,11 +10,15 @@
 .form-field {
   position: relative;
 }
+.form-field:not(:last-child) {
+  margin-bottom: 28px;
+}
 
 .form-label {
   position: absolute;
-  top: -20px;
+  top: 0;
   left: 0;
+  transform: translateY(calc(-100% + -4px));
 }
 
 .form-input {
@@ -29,9 +35,13 @@
   cursor: pointer;
   outline: none;
 
-  margin-top: 30px;
+  margin-top: 20px;
   display: block;
 
-  max-width: 150px;
-  padding: 8px 5px;
+  max-width: 100px;
+  padding: 7px 4px;
+
+  font-size: 13px;
+
+  border-radius: 4px;
 }

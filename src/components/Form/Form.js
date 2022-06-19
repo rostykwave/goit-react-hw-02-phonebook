@@ -63,18 +63,19 @@ class Form extends Component {
           />
         </label>
 
-        {/* <label>
-            number
-            <input
-              type="tel"
-                   value={this.state.number}
-              onChange={this.handleChange}
-  name="number"
-  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-  required
-/>
-          </label> */}
+        <label className="form-field">
+          <span className="form-label">Number</span>
+          <input
+            type="tel"
+            value={this.state.number}
+            onChange={this.handleChange}
+            name="number"
+            className="form-input"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+          />
+        </label>
         <button type="submit" className="submit-btn">
           Add contact
         </button>
