@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import { nanoid } from 'nanoid';
 
 class Form extends Component {
   state = {
@@ -7,7 +6,7 @@ class Form extends Component {
     number: '',
   };
 
-  nameInputId = nanoid();
+  // contactId = nanoid();
 
   // handleNameChange = e => {
   //   this.setState({ name: e.currentTarget.value });
@@ -33,7 +32,6 @@ class Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
 
     this.props.onSubmit(this.state);
 
@@ -56,7 +54,6 @@ class Form extends Component {
             type="text"
             value={this.state.name}
             onChange={this.handleChange}
-            id={this.nameInputId}
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"

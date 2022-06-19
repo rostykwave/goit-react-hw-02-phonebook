@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Form from "./Form/Form";
+import { nanoid } from 'nanoid';
 
 class App extends Component{
   state = {
@@ -7,9 +8,16 @@ class App extends Component{
    
   }
 
-  formSubmitHandler = data => {
-    console.log(data);
-  }
+  addContact = data => {
+    const contact = {
+      id: nanoid(),
+      ...data,
+    }
+
+    this.setState(({ contacts })=>({
+      contacts: [contact, ...contacts],
+    }));
+  };
  
 
   render() {
@@ -18,10 +26,14 @@ class App extends Component{
         <h2>PhoneBook</h2>
 
 
-        <Form onSubmit={ this.formSubmitHandler } />
+        <Form onSubmit={ this.addContact } />
       
         <h2>Contacts</h2>
-        <ul></ul>
+        <ul>
+          {this.state.contacts.map(({ id, name, number }) => (
+            <li key={id}>{ name}</li>
+          ))}
+        </ul>
       </>
     )
   }
