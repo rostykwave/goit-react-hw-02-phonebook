@@ -8,4 +8,8 @@ const Input = styled(Field)`
   }
 `;
 
-export { Input };
+const ErrorText = styled.p`
+  color: red;
+`;
+
+export { Input, ErrorText };

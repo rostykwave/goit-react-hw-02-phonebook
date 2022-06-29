@@ -1,9 +1,18 @@
 // import { Component } from 'react';
 // import s from './ContactForm.module.css';
 import PropTypes from 'prop-types';
-import { Formik, Form } from 'formik';
-import { Input } from './ContactForm.styled';
+import { Formik, Form, ErrorMessage } from 'formik';
+import { ErrorText, Input } from './ContactForm.styled';
 import * as yup from 'yup';
+
+const FormError = ({ name }) => {
+  return (
+    <ErrorMessage
+      name={name}
+      render={message => <ErrorText>{message}</ErrorText>}
+    />
+  );
+};
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -15,10 +24,11 @@ const initialValues = {
   number: '',
 };
 
-const ContactForm = () => {
+const ContactForm = ({ onSubmit }) => {
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    // console.log(values);
     // console.log(actions);
+    onSubmit(values);
     resetForm();
   };
   return (
@@ -39,6 +49,7 @@ const ContactForm = () => {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
+          <FormError name="name" />
         </label>
 
         <label>
@@ -52,6 +63,7 @@ const ContactForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
+          <FormError name="number" />
         </label>
         <button type="submit">Add contact</button>
       </Form>
