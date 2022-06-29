@@ -3,6 +3,12 @@
 import PropTypes from 'prop-types';
 import { Formik, Form } from 'formik';
 import { Input } from './ContactForm.styled';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  number: yup.string().min(6).max(13).required(),
+});
 
 const initialValues = {
   name: '',
@@ -16,7 +22,11 @@ const ContactForm = () => {
     resetForm();
   };
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={schema}
+      onSubmit={handleSubmit}
+    >
       <Form autoComplete="off">
         <label>
           <span>Name</span>
