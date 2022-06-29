@@ -32,6 +32,7 @@ const FormLabel = styled.span`
 
 const ErrorText = styled.p`
   color: red;
+  font-size: 14px;
 `;
 
 const SubmitBtn = styled.button`

@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const DeleteBtn = styled.button`
-  margin-left: 15px;
+  font: inherit;
+  cursor: pointer;
+
+  margin-left: 20px;
   margin-top: 20px;
   max-width: 100px;
   padding: 5px 4px;
 
   border: none;
-  font: inherit;
-  cursor: pointer;
   outline: none;
-  font-size: 13px
+  font-size: 12px;
   border-radius: 4px;
 
   :hover {
@@ -23,5 +24,5 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  font-size: 14px;
+  font-size: 16px;
 `;

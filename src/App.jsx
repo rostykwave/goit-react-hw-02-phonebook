@@ -5,8 +5,6 @@ import { ContactList } from './components/ContactList';
 import { Container } from './components/Container';
 import { Filter } from './components/Filter';
 
-//Додробити на css modules
-
 class App extends Component {
   state = {
     contacts: [
@@ -60,15 +58,11 @@ class App extends Component {
 
     return (
       <Container>
-        <h2>PhoneBook</h2>
-
+        <h1>PhoneBook</h1>
         <ContactForm onSubmit={this.addContact} />
 
-        <h2>Contacts</h2>
-        <br></br>
-
+        <h1>Contacts</h1>
         <Filter value={filter} onChange={this.changeFilter} />
-
         <ContactList
           contacts={visibleContacts}
           onDeleteContact={this.deleteContact}
