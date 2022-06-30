@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { Formik, ErrorMessage } from 'formik';
 import {
   ErrorText,
-  Input,
-  FormWrap,
+  StyledInput,
+  StyledForm,
   FormField,
   FormLabel,
   SubmitBtn,
@@ -42,10 +42,10 @@ export const ContactForm = ({ onSubmit }) => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <FormWrap autoComplete="off">
+      <StyledForm autoComplete="off">
         <FormField>
           <FormLabel>Name</FormLabel>
-          <Input
+          <StyledInput
             type="text"
             name="name"
             // pattern="^[a-zA-Zа-яієїґА-ЯҐЄІЇ]+(([' -][a-zA-Zа-яієїґА-ЯҐЄІЇ ])?[a-zA-Zа-яієїґА-ЯҐЄІЇ]*)*$"
@@ -57,7 +57,7 @@ export const ContactForm = ({ onSubmit }) => {
 
         <FormField>
           <FormLabel>Number</FormLabel>
-          <Input
+          <StyledInput
             type="tel"
             name="number"
             // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -67,7 +67,7 @@ export const ContactForm = ({ onSubmit }) => {
           <FormError name="number" />
         </FormField>
         <SubmitBtn type="submit">Add contact</SubmitBtn>
-      </FormWrap>
+      </StyledForm>
     </Formik>
   );
 };

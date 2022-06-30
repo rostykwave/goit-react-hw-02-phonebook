@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
 
-const Input = styled(Field)`
+export const StyledInput = styled(Field)`
   border: 1px solid rgba(33, 33, 33, 0.2);
   :focus-visible {
     outline: 2px solid #2196f3;
   }
 `;
 
-const FormWrap = styled(Form)`
+export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -16,26 +16,26 @@ const FormWrap = styled(Form)`
   border: 1px solid black;
 `;
 
-const FormField = styled.label`
+export const FormField = styled.label`
   position: relative;
   :not(:last-child) {
     margin-bottom: 28px;
   }
 `;
 
-const FormLabel = styled.span`
+export const FormLabel = styled.span`
   position: absolute;
   top: 0;
   left: 0;
   transform: translateY(calc(-100% + -4px));
 `;
 
-const ErrorText = styled.p`
+export const ErrorText = styled.p`
   color: red;
   font-size: 14px;
 `;
 
-const SubmitBtn = styled.button`
+export const SubmitBtn = styled.button`
   border: none;
   font: inherit;
   cursor: pointer;
@@ -55,5 +55,3 @@ const SubmitBtn = styled.button`
     background-color: #c8e4fc;
   }
 `;
-
-export { Input, ErrorText, FormWrap, FormField, FormLabel, SubmitBtn };
