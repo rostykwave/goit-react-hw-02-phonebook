@@ -1,1 +1,1 @@
-export { Container } from './Container.styled.jsx';
+export { Container } from './Container.styled.js';
